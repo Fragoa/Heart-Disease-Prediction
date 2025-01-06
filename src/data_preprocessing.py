@@ -30,6 +30,7 @@ scaledDf = pd.DataFrame(scaledData, columns=numerical_columns)
 # Combine both encoded and scaled data into a final DataFrame
 dfFinal = pd.concat([df.drop(columns=categorical_columns), encodedDf, scaledDf], axis=1)
 
+dfFinal['Bias'] = 1
 
 
 preprocessing_dir = os.path.join(base_dir, 'data', 'processed')
